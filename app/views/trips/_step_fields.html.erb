@@ -1,0 +1,24 @@
+<div class="fields">
+  <hr/>
+  <div class="field">
+    <%= f.label :location %><br />
+    <%= f.text_field :location %>
+  </div>
+  <div class="field">
+    <%= f.label :arrival %><br />
+    <%= f.datetime_select :arrival %>
+  </div>
+  <div class="field">
+    <%= f.label :departure %><br />
+    <%= f.datetime_select :departure %>
+  </div>
+   <div class="field">
+    <%= f.label :description, "Details about your stay" %><br />
+    <%= f.text_area :description, :rows => 4, :cols => 25 %>
+  </div>
+  <div class="field">
+    <%= f.label :travel_info, "Travel Details (How'd you get here?)" %><br />
+    <%= f.text_area :travel_info, :rows => 4, :cols => 25 %>
+  </div>
+  <%= link_to_remove_fields "Remove this step", f %>
+</div>

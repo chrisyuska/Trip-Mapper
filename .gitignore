@@ -1,0 +1,6 @@
+.bundle
+db/*.sqlite3
+log/*.log
+config/initializers/setup_mail.rb
+tmp/
+.sass-cache/

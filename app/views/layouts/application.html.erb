@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mapper</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="header">
+      <h1>Journey. Mapped.</h1>
+    </div>
+    <div class="main">
+      <%= yield %>
+    </div>
+  </div>
+  <div class="footer">
+    <%= link_to "Contact Chris Yuska", "mailto:chrisyuska@gmail.com" %>
+  </div>
+</body>
+</html>

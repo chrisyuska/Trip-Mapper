@@ -1,0 +1,86 @@
+/* Global vars */
+$lightBlue: #1144AA;
+$darkBlue: #05296E;
+$white: #FFF;
+$black: #000;
+$lighterGray: #808080;
+$gray: #272727;
+$lightGray: #424242;
+
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+div {
+  margin: 0 auto;
+  padding: 0;
+}
+
+div.wrapper {
+  min-height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+div.header {
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  background-color: $lightBlue;
+  border-bottom: 2px solid $black;
+
+  h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 4em;
+    line-height: 120px;
+    color: $white;
+    text-shadow: 2px 2px 2px $darkBlue;
+  }
+}
+
+div.main {
+  width: 800px;
+  padding: 0;
+  overflow: auto;
+  padding-bottom: 36px;
+}
+
+div.footer {
+  position: relative;
+  margin-top: -36px;
+  height: 36px;
+  clear: both;
+  text-align: center;
+  width: 100%;
+  font-size: 18px;
+  line-height: 36px;
+}
+
+div.field {
+  margin: 5px;
+}
+div.fields {
+  margin: 5px;
+}
+
+div.block {
+  margin: 0 10px;
+}
+
+#map_canvas {
+  height: 400px;
+  width: 780px;
+  border: 2px solid #000;
+  margin: 10px;
+}
+
+/*Opera Fix */
+body:before {
+  content:"";
+  height:100%;
+  float:left;
+  width:0;
+  margin-top:-32767px;
+}
