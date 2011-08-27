@@ -10,6 +10,9 @@
     </div>
   <% end %>
 
+  <%= f.hidden_field :authentication_token %>
+  <%= f.hidden_field :marketable_url %>
+
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email %>

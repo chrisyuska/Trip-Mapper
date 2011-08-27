@@ -3,7 +3,9 @@
 
 <p>Your trip has been planned.  Now all you have to do is share the link below with your friends!</p>
 
-<p><%= link_to "#{@trip.shareable_url}", @trip.shareable_url %></p>
+<p><b>Share this link:</b> <%= link_to "#{@trip.shareable_url}", @trip.shareable_url %></p>
+
+<p><b>Edit your trip with this link:</b> <%= link_to "#{@trip.shareable_url}/#{@trip.authentication_token}", "#{@trip.shareable_url}/#{@trip.authentication_token}" %></p>
 
 <p>Thanks for using this service!</p>
 
