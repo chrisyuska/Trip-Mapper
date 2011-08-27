@@ -80,19 +80,25 @@ var infowindow = null;
 
     var now = new Date();
     // ratio is to calculate travel distance (linear estimate of time/distance)
-    var ratio = (now.getTime() - Date.parse(json[i-1].departure))/(Date.parse(json[i].arrival) - Date.parse(json[i-1].departure));
+    var ratio;
+    //don't want to divide by zero
+    if (Date.parse(json[i].arrival)-Date.parse(json[i-1].departure) != 0) {
+      ratio = (now.getTime() - Date.parse(json[i-1].departure))/(Date.parse(json[i].arrival) - Date.parse(json[i-1].departure));
+    } else {
+      ratio = 1;
+    }
 
     //calculate rough location
     var lat, lng;
-    if (json[i].lat != 0 || json[i-1].lat != 0) {
+    if (json[i].lat == json[i-1].lat) {
+      lat = json[i].lat;
+    } else {
       lat = (json[i].lat - json[i-1].lat)*ratio + json[i-1].lat;
-    } else {
-      lat = 0;
     }
-    if (json[i].lng != 0 || json[i-1].lng != 0) {
-      lng = (json[i].lng - json[i-1].lng)*ratio + json[i-1].lng;
+    if (json[i].lng == json[i-1].lng) {
+      lng = json[i].lat;
     } else {
-      lng = 0;
+      lng = (json[i].lng - json[i-1].lng)*ratio + json[i-1].lng;
     }
 
     var latLng = new google.maps.LatLng(lat, lng);
