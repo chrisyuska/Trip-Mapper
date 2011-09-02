@@ -12,7 +12,7 @@ class Trip < ActiveRecord::Base
   before_create :generate_token
 
   def shareable_url
-    "http://mapper.lithoslabs.com/#{self.marketable_url}"
+    "http://mapped.herokuapp.com/#{self.marketable_url}"
   end
 
   private
