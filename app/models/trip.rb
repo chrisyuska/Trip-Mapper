@@ -1,5 +1,5 @@
 class Trip < ActiveRecord::Base
-  has_many :steps, :dependent => :destroy
+  has_many :steps, :order => "arrival", :dependent => :destroy
   accepts_nested_attributes_for :steps, :reject_if => lambda { |a| a[:location].blank? }, :allow_destroy => true
 
   validates_presence_of :name, :email
